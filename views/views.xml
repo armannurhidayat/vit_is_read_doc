@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+	<record id="views_sale_order_form" model="ir.ui.view">
+	  <field name="name">views_sale_order.form</field>
+	  <field name="model">sale.order</field>
+	  <field name="inherit_id" ref="sale.view_order_form" />
+	  <field name="arch" type="xml">
+	  	<xpath expr="//sheet/div[@name='button_box']" position="after">
+			<field name="is_read" invisible="1"/>
+			<widget name="web_ribbon" title="Read" attrs="{'invisible': [('is_read', '=', False)]}"/>
+		</xpath>
+	  </field>
+	</record>
+  </data>
+</odoo>
